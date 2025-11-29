@@ -1,11 +1,14 @@
-/* GENERAL */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
     color: white;
 }
 
-/* BACKGROUND VIDEO */
 #bg-video {
     position: fixed;
     top: 0;
@@ -16,66 +19,74 @@ body {
     z-index: -100;
 }
 
-/* DARK OVERLAY FOR TEXT VISIBILITY */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0,0,0,0.45);
     z-index: -50;
 }
 
-/* HEADER */
 header {
     position: fixed;
     top: 0;
-    width: 100%;
-    padding: 20px 40px;
-    background: rgba(0, 0, 0, 0.4);
+    width: 100vw;
+    padding: 15px 20px;
+    background: rgba(0,0,0,0.4);
     backdrop-filter: blur(8px);
+    z-index: 100;
 }
 
 nav {
-    padding-right:60px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 50px;
+    position: relative;
 }
 
 nav h1 {
-    font-size: 24px;
+    font-size: 20px;
+    text-align: center;
 }
 
-nav ul {
-    display: flex;
+#menu-button {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 200;
+}
+
+.nav-links {
     list-style: none;
-    gap: 25px;
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
 }
 
-nav a {
+.nav-links a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
 }
 
-nav a:hover {
-    color: #ffdf85;
-}
-
-/* SECTIONS */
 .section {
-    padding: 120px 20px; /* space below fixed header */
+    padding: 100px 15px;
     display: flex;
     justify-content: center;
 }
 
-/* GLASS CARD STYLE */
 .card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px 40px;
+    background: rgba(255,255,255,0.1);
+    padding: 25px 30px;
     border-radius: 16px;
     backdrop-filter: blur(10px);
     width: 90%;
@@ -84,20 +95,10 @@ nav a:hover {
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* PROJECT CARDS */
-.project-card {
-    margin-top: 20px;
-    padding: 20px;
-    background: rgba(255,255,255,0.15);
-    border-radius: 10px;
-    backdrop-filter: blur(6px);
-}
-
-/* CONTACT FORM */
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .contact-form input {
@@ -120,4 +121,39 @@ footer {
     padding: 20px;
     background: rgba(0,0,0,0.6);
     margin-top: 40px;
+}
+
+@media screen and (max-width: 1024px) {
+    nav {
+        justify-content: space-between;
+    }
+    #menu-button {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.9);
+        padding: 20px;
+        gap: 20px;
+        text-align: center;
+        z-index: 120;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    nav {
+        justify-content: center;
+        gap: 60px;
+    }
+    #menu-button {
+        display: none;
+    }
 }

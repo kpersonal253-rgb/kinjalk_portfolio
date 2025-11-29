@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kinjalk Pokharel's Portfolio</title>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<!-- BACKGROUND VIDEO -->
 <video id="bg-video" autoplay muted loop playsinline>
     <source src="video/starship.mp4" type="video/mp4">
 </video>
 
-<!-- DARK OVERLAY FOR READABILITY -->
 <div class="overlay"></div>
 
-<header>
+<header id="hero">
     <nav>
         <h1>Kinjalk Pokharel's Portfolio</h1>
-        <ul>
+
+        <button id="menu-button">☰</button>
+
+        <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -55,12 +55,12 @@
 
         <div class="project-card">
             <h3>Project 1</h3>
-            <p>A short description of the project.</p>
+            <p>Built a machine learning model which can distinguish between a dog and cat image.</p>
         </div>
 
         <div class="project-card">
             <h3>Project 2</h3>
-            <p>A short description of the project.</p>
+            <p>Created a recommendation system using Python, Fastapi and Java.</p>
         </div>
     </div>
 </section>
@@ -69,9 +69,9 @@
     <div class="card">
         <h2>Contact Me</h2>
         <form class="contact-form">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <input type="tel" placeholder="Your Phone" required />
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Your Phone" required>
             <button type="submit">Submit</button>
         </form>
     </div>
@@ -81,5 +81,6 @@
     <p>&copy; 2025 My Portfolio</p>
 </footer>
 
+<script src="js/script.js"></script>
 </body>
 </html>
